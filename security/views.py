@@ -21,6 +21,7 @@ def services(request):
 def contact(request):
     context = dict()
     context['title'] = 'Contact'
+    
     return render(request, 'basic/contact.html', context)
 
 

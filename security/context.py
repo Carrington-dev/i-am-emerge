@@ -1,7 +1,9 @@
 def show(request):
     context = dict()
-    context['address'] = """A108 Adam Street <br>New York, NY 535022<br>United States <br><br>"""
-    context['tel'] = '(+27) 11 070 7229'
-    context['email'] = 'info@iamemerge.co.za'
-    context['company'] = 'I am emerge'
+    context['address'] = """59 Nottingham Rd <br>Randpark Ridge, GP 2169<br>Johannesburg <br><br>"""
+    context['contact_address'] = """59 Nottingham Rd <br>Randpark Ridge, GP 2169<br>"""
+    context['tel'] = '(+27) 11 346 5233'
+    context['tel2'] = '(+27) 81 506 1174'
+    context['email'] = 'brian@multimediavilla.co.za'
+    context['company'] = 'Multimedia Villa'
     return context
