@@ -3,5 +3,22 @@
 {% load static %}
 {% comment %}  {% endcomment %}
 {% block content %}
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Portfolio</h2>
+        <ol>
+          <li><a href="{% url "home" %}">Home</a></li>
+          <li>Portfolio</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+
+{% include "portfolio.html" %}
 
 {% endblock content %}
