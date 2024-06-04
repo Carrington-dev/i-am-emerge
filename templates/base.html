@@ -30,8 +30,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static '/css/style.css' %}" rel="stylesheet">
-
- 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -65,6 +64,25 @@
 
   <!-- Template Main JS File -->
   <script src="{% static '/js/main.js' %}"></script>
+
+  <!-- JavaScript -->
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.js"></script>
+  <script>
+      {% if messages %}
+          {% for message in messages %}
+              Swal.fire({
+                  title: "{{ message.tags|capfirst }}",
+                  text: "{{ message }}",
+                  icon: "{{ message.tags }}",
+                  timer: 3000,
+                  showConfirmButton: false
+              });
+          {% endfor %}
+      {% endif %}
+  </script>
 
 </body>
 

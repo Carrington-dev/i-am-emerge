@@ -60,7 +60,8 @@
 
       <div class="row mt-5 justify-content-center" data-aos="fade-up">
         <div class="col-lg-10">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="{% url 'contact' %}" method="post" role="form" class="php-email-form">
+            {% csrf_token %}
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="full_name" class="form-control" id="name" placeholder="Your Name" required>
@@ -76,9 +77,22 @@
               <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
             </div>
             <div class="my-3">
-              <div class="loading">Loading</div>
+              {% comment %} <div class="loading">Loading</div>
               <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+              {% for message in messages %}
+                  <li class="{{ message.tags }}">
+                  {% if message.tags != 'alert-danger' %}
+                    {% if 'safe' in message.tags %}
+                    <div class="sent-message d-block">{{ message|safe }}</div>
+                    {% else %}
+                    <div class="sent-message d-block">{{ message }}</div>
+                    {% endif %}
+                  {% else %}
+                  <div class="error-message d-block">{{ message }}</div>
+                  {% endif %}
+                  </li>
+              {% endfor %} {% endcomment %}
+              
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
