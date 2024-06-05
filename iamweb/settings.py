@@ -126,3 +126,5 @@ GRAPPELLI_AUTOCOMPLETE_LIMIT = 20
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'extra/assets/')
 ]
+
+CSRF_TRUSTED_ORIGINS = ["https://stemgon.co.za", "https://www.stemgon.co.za", "https://*.ngrok-free.app", "https://*.*.co.za",]
