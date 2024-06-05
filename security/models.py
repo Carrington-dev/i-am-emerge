@@ -30,7 +30,7 @@ class Subscribe(models.Model):
         verbose_name_plural = 'Subscribers'
 
 
-
+"""
 class Calculator(models.Model):
     # email                   = models.EmailField(max_length=200, verbose_name='email', unique=True)
     # is_subscribed           = models.BooleanField(default=True ,verbose_name='subscribed' )
@@ -43,3 +43,4 @@ class Calculator(models.Model):
     class Meta:
         verbose_name = 'Calculator'
         verbose_name_plural = 'Calculators'
+"""
